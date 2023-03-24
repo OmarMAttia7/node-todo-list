@@ -1,0 +1,14 @@
+<main>
+  <h1>Task Manager</h1>
+  <form method="post" action="/tasks">
+    <label for="task-name">Add new task:</label>
+    <input type="text" name="title" id="task-name" />
+    <button type="submit">Add</button>
+  </form>
+  <h2>Tasks</h2>
+  <ul>
+    {{todos}}
+  </ul>
+  <form id="delete-tasks-form" method="post" action="/tasks/delete"></form>
+  <form id="update-tasks-form" method="post"></form>
+</main>
