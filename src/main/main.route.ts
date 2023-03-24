@@ -1,6 +1,6 @@
 import type { FastifyInstance } from 'fastify';
 import tasksModel from '../data/index.js';
-import serveHtml from '../lib/serveHtml.js';
+import serveHtml from '../lib/serveHTML/index.js';
 import { listItem } from './lib/templates.js';
 export async function mainRoute(server: FastifyInstance): Promise<void> {
   server.get('/', async (req, res) => {
