@@ -1,4 +1,4 @@
-import loadFile from "../loadFile.js";
+import loadFile from '../loadFile.js';
 
 const entryHtml = (await loadFile('client/entry.html')).toString();
 
@@ -18,6 +18,7 @@ export class HTMLPage implements IHTMLPage {
   readonly content: string;
   readonly links: readonly Link[];
   readonly #html: string;
+
   constructor({ title, content, links }: IHTMLPage) {
     this.title = title;
     this.content = content;
@@ -26,10 +27,11 @@ export class HTMLPage implements IHTMLPage {
   }
 
   private buildHtml(): string {
+    const { title, content, links } = this;
     return entryHtml
-      .replace('{title}', this.title)
-      .replace('{body}', this.content)
-      .replace('{links}', HTMLPage.transformLinks(this.links));
+      .replace('{title}', title)
+      .replace('{body}', content)
+      .replace('{links}', HTMLPage.transformLinks(links));
   }
 
   private static transformLinks(links: readonly Link[]): string {
