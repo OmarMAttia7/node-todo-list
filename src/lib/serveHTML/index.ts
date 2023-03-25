@@ -1,5 +1,5 @@
 import loadFile from '../loadFile.js';
-import { type Link, HTMLPage } from './HTMLPage.js';
+import { type Link, HTMLPage } from './PageBuilder.js';
 
 interface ServeHtmlOptions {
   title: string;
